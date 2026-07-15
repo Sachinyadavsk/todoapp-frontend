@@ -7,7 +7,7 @@ import api from '../services/api';
 
 
 
-const App = () => {
+const Todo = () => {
     const [tasks, setTasks] = useState([]);
     const [task, setTask] = useState("");
     const [color, setColor] = useState("gray");
@@ -148,7 +148,7 @@ const App = () => {
     }
 
     return (
-        <div className="py-15 px-10 min-h-screen w-full bg-gray-500 flex items-center justify-center text-white">
+        <div className="max-w-3xl mx-auto px-6 py-20 bg-gray-500 flex items-center justify-center text-white">
             {/* container */}
             <div className="w-250">
                 {/* header */}
@@ -316,4 +316,4 @@ const App = () => {
     )
 }
 
-export default App
+export default Todo

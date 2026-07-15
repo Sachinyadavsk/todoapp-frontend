@@ -1,6 +1,26 @@
-import React from 'react'
+import React from 'react';
+import Footer from "../components/Footer"
+import { FaClock, FaTasks, FaUsers } from 'react-icons/fa';
 
 const Abouts = () => {
+  const features = [
+    {
+      icon: <FaTasks className="text-4xl text-indigo-600" />,
+      title: "Task Management",
+      desc: "Create, edit, delete and organize your daily tasks easily.",
+    },
+    {
+      icon: <FaClock className="text-4xl text-green-600" />,
+      title: "Due Dates",
+      desc: "Never miss deadlines with reminders and due dates.",
+    },
+    {
+      icon: <FaUsers className="text-4xl text-pink-600" />,
+      title: "Team Collaboration",
+      desc: "Share projects and work together with your team.",
+    },
+  ];
+
   return (
     <div>
       <section className="max-w-7xl mx-auto py-2 px-4">
@@ -31,6 +51,33 @@ const Abouts = () => {
           </div>
         </div>
       </section>
+
+      <section className='max-w-7xl mx-auto py-10 px-2'>
+        <div className="text-center my-10">
+          <h1 className='text-3xl font-bold'>Why Choose TodoApp?</h1>
+          <p className='text-lg text-gray-500 mt-2'>Everything you need to manage your work efficiently.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-18">
+          {features.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-xl p-8 hover:-translate-y-2 transition"
+            >
+              {item.icon}
+
+              <h3 className="text-2xl font-semibold mt-5">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-600 mt-3">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

@@ -6,8 +6,11 @@ import {
   FaUsers,
   FaArrowRight,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer"
 
 const Home = () => {
+  const navigate= useNavigate()
   const features = [
     {
       icon: <FaTasks className="text-4xl text-indigo-600" />,
@@ -77,7 +80,7 @@ const Home = () => {
             </p>
 
             <div className="flex gap-4 mt-8">
-              <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700">
+              <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700" onClick={()=>navigate("/start")}>
                 Get Started
               </button>
 
@@ -236,15 +239,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-          <h3 className="text-2xl font-bold text-white">TodoApp</h3>
-
-          <p className="mt-4 md:mt-0">
-            © 2026 TodoApp. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };
