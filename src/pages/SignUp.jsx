@@ -1,11 +1,11 @@
 import React from 'react'
 import { FaEdit } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
-import bannerImage from '../assets/banner_image.jpg'
+
 
 const SignUp = () => {
   return (
-    <div style={{ backgroundImage: `url(${bannerImage})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", }}>
+    <div>
       <section className='max-w-xl mx-auto py-6 px-8'>
         <div className="shadow-2xl py-5 px-10">
           <div className="flex text-center justify-center text-3xl font-semibold gap-2">

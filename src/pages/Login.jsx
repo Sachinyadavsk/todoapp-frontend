@@ -1,10 +1,10 @@
 import React from 'react'
 import { FaEdit } from 'react-icons/fa';
-import bannerImage from '../assets/banner_image.jpg'
+
 
 const Login = () => {
   return (
-    <div style={{ backgroundImage: `url(${bannerImage})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", }}>
+    <div>
       <section className='max-w-xl mx-auto py-10 px-8'>
         <div className="shadow-2xl mt-4 py-10 px-10">
           <div className="flex text-center justify-center text-3xl font-semibold gap-2">
