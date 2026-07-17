@@ -14,6 +14,8 @@ import Desclaimer from "./pages/Desclaimer";
 import Faqs from "./pages/Faqs";
 import Policy from "./pages/Policy";
 import TermConditions from "./pages/TermConditions"
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 
 const App = () => {
   return (
@@ -31,6 +33,10 @@ const App = () => {
         <Route path='/faqs' element={<Faqs />} />
         <Route path='/privacy-policy' element={<Policy />} />
         <Route path='/terms-conditions' element={<TermConditions />} />
+
+        {/* auth pages connect with app.js */}
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<SignUp />} />
       </Routes>
     </div>
   )
