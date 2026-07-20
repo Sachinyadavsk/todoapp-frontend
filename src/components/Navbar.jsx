@@ -4,6 +4,8 @@ import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const isAuth = localStorage.getItem("isAuth") === "true";
+    const user = JSON.parse(localStorage.getItem("user"));
 
     const navLinks = [
         { name: "Home", path: "/" },
@@ -50,20 +52,50 @@ const Navbar = () => {
                     </div>
 
                     {/* Login Buttons */}
+                    {/* Login Buttons */}
                     <div className="hidden lg:flex items-center gap-3">
-                        <Link
-                            to="/login"
-                            className="border border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition"
-                        >
-                            Login
-                        </Link>
+                        {isAuth ? (
+                            <>
+                                <span className="text-gray-700 font-medium">
+                                    Welcome, {user?.name}
+                                </span>
 
-                        <Link
-                            to="/register"
-                            className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
-                        >
-                            Sign Up
-                        </Link>
+                                <Link
+                                    to="/user/dashboard"
+                                    className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+                                >
+                                    Dashboard
+                                </Link>
+
+                                <button
+                                    onClick={() => {
+                                        localStorage.removeItem("token");
+                                        localStorage.removeItem("user");
+                                        localStorage.removeItem("isAuth");
+                                        window.location.reload(); // or navigate("/login")
+                                    }}
+                                    className="border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition"
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link
+                                    to="/login"
+                                    className="border border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition"
+                                >
+                                    Login
+                                </Link>
+
+                                <Link
+                                    to="/register"
+                                    className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+                                >
+                                    Sign Up
+                                </Link>
+                            </>
+                        )}
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -103,19 +135,45 @@ const Navbar = () => {
                             </button>
                         </div>
 
-                        <Link
-                            to="/login"
-                            className="text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg"
-                        >
-                            Login
-                        </Link>
+                        {isAuth ? (
+                            <>
+                                <Link
+                                    to="/user/dashboard"
+                                    className="text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg"
+                                >
+                                    Dashboard
+                                </Link>
+                                <button
+                                    onClick={() => {
+                                        localStorage.removeItem("token");
+                                        localStorage.removeItem("user");
+                                        localStorage.removeItem("isAuth");
+                                        window.location.reload(); // or navigate("/login")
+                                    }}
+                                    className="border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition"
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link
+                                    to="/login"
+                                    className="text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg"
+                                >
+                                    Login
+                                </Link>
 
-                        <Link
-                            to="/register"
-                            className="text-center bg-indigo-600 text-white py-2 rounded-lg"
-                        >
-                            Sign Up
-                        </Link>
+                                <Link
+                                    to="/register"
+                                    className="text-center bg-indigo-600 text-white py-2 rounded-lg"
+                                >
+                                    Sign Up
+                                </Link>
+                            </>
+                        )}
+
+
                     </div>
                 </div>
             )}
