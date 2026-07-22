@@ -80,7 +80,7 @@ const Home = () => {
             </p>
 
             <div className="flex gap-4 mt-8">
-              <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700" onClick={()=>navigate("/start")}>
+              <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700" onClick={()=>navigate("/login")}>
                 Get Started
               </button>
 

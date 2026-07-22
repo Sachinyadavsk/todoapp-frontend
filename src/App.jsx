@@ -30,7 +30,7 @@ const App = () => {
         <Route path='/about' element={<Abouts />} />
         <Route path='/services' element={<Services />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/start' element={<Todo />} />
+        <Route path='/user/task/start' element={<Todo />} />
 
         {/* website pages required */}
         <Route path='/desclaimer' element={<Desclaimer />} />
