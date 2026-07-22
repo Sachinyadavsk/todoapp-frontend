@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const isAuth = localStorage.getItem("isAuth") === "true";
     const user = JSON.parse(localStorage.getItem("user"));
@@ -72,7 +73,7 @@ const Navbar = () => {
                                         localStorage.removeItem("token");
                                         localStorage.removeItem("user");
                                         localStorage.removeItem("isAuth");
-                                        window.location.reload(); // or navigate("/login")
+                                        navigate("/login");
                                     }}
                                     className="border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition"
                                 >
@@ -148,7 +149,7 @@ const Navbar = () => {
                                         localStorage.removeItem("token");
                                         localStorage.removeItem("user");
                                         localStorage.removeItem("isAuth");
-                                        window.location.reload(); // or navigate("/login")
+                                        navigate("/login");
                                     }}
                                     className="border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition"
                                 >

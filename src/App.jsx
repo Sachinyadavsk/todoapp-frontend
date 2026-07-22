@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Abouts from './pages/Abouts';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import Todo from './components/todo';
+
 
 // connecting the website pages
 import Desclaimer from "./pages/Desclaimer";
@@ -16,6 +16,9 @@ import Policy from "./pages/Policy";
 import TermConditions from "./pages/TermConditions"
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+
+// auth user router link
+import Todo from './auth/Todo';
 import Dashboard from './auth/Dashboard';
 
 const App = () => {
